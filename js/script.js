@@ -27,7 +27,7 @@ const strangeArray = [
 // Función que recibe por parámetro un array y muestra sus elementos en pantalla
 function showList(array) {
   const container = document.getElementById("list");
-  container.innerHTML = "";
+  container.innerHTML = '';
   // Más info de forEach => https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   array.forEach((element) => {
     const li = document.createElement("li");
@@ -37,6 +37,10 @@ function showList(array) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
+  const arrayOrdenado = strangeArray.filter( li => typeof li === 'string');
+  arrayOrdenado.sort();
+  console.log(arrayOrdenado);
+  showList(arrayOrdenado);
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
 });
